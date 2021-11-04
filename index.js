@@ -5,6 +5,7 @@ const Razorpay  = require('razorpay')
 const shortid = require('shortid') 
 app.use(cors()) ;
 app.use(express.json({limit:'1mb'}));
+var port = process.env.PORT || 1337;
 
 
 const razorpay = new Razorpay({
@@ -40,6 +41,7 @@ app.post('/razorpay', async (req,res)=> {
 
 })
 
-app.listen(1337,() => {
-    console.log('lustening on 1337');
-})
+app.listen(port)
+// app.listen(1337,() => {
+//     console.log('lustening on 1337');
+// })
